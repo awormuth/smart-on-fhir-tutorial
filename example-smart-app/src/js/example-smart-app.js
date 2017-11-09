@@ -12,13 +12,12 @@
         var patient = smart.patient;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
-                    type: 'Observation'
+                    type: 'DocumentReference'
                   });
 
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          console.log(patient)
           console.log(obv)
         });
       } else {
